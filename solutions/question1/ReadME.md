@@ -11,4 +11,4 @@ After getting all the possible combinations, I see which one has the least space
 Instructions for Running:
 python Q1.py
 
-By default, it will run all the examples outlined in the question. If you want to add more samples please add them in the list S and D respectively.
+By default, it will run all the examples outlined in the question. If you want to add more samples, please add them in the list S and D respectively.
