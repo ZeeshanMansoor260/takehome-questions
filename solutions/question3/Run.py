@@ -44,6 +44,7 @@ def train_lstm(dropout):
     model.fit(trainX, trainY, epochs=100, batch_size=1)
     return model
 
+#predict single measument for different models
 def experiment(model):
     forcast_x = numpy.reshape(testX[-2],(1,1,1))
     forcast = model.predict(forcast_x)
@@ -80,22 +81,23 @@ testX = numpy.reshape(testX, (testX.shape[0], 1, testX.shape[1]))
 
 n_dropout = [0.0, 0.2, 0.4, 0.6]
 predictions = []
+#run/train the model using different dropouts
 for dropout in n_dropout:
-    if train_mode == 1:
+    if train_mode == 1: #if want to train the model
         model = train_lstm(dropout)
         model_json = model.to_json()
         with open("models/lstm_dropout"+str(dropout)+".json", "w") as json_file:
             json_file.write(model_json)
         # serialize weights to HDF5
         model.save_weights("models/lstm_dropout"+str(dropout)+".h5")
-        #model.save("models/lstm_dropout"+str(dropout)+".hd5")
-    else:
+   
+    else:#will run in a testing mode
         json_file = open("models/lstm_dropout"+str(dropout)+".json", 'r')
         loaded_model_json = json_file.read()
         json_file.close()
         model = model_from_json(loaded_model_json)
         model.load_weights("models/lstm_dropout"+str(dropout)+".h5")
-        #model = load_model("models/lstm_dropout"+str(dropout)+".h5")
+        
     fx,fr = experiment(model)
     predictions.append(fr)
 mean = numpy.array(predictions).mean()
