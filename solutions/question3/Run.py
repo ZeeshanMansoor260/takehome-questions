@@ -103,4 +103,4 @@ for dropout in n_dropout:
 mean = numpy.array(predictions).mean()
 std = numpy.array(predictions).std()
 
-print("mean: ", mean, " confidence: ", std)
+print("mean: ", mean, " uncertainty: ", std)
