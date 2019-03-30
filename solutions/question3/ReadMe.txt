@@ -17,7 +17,7 @@ python Run.py 0
 
 #****Output****#
 Predicting for: 2017-08-01  true value: 114.06
-mean:  111.12692  uncertainity:  1.9513785
+mean:  111.12692  uncertainty:  1.9513785
 
 Question:
 Assuming you are writing a LSTM model, how do you predict the next value in the above time-series on a
