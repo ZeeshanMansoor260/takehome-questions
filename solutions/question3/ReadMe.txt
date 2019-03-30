@@ -1,21 +1,22 @@
 The model will try to predict the uncertainty of a single prediction using an LSTM model.
 
 
-System Specification:
+#***System Specification***#
 Python 3.6
 keras 2.2.4
 h5py 2.9.0
 numpy 1.16.1
 sklearn 0.19.1
 
-Instructions for running the code:
+#****Instructions for Running the Code*****#
 If you want to run in a test mode. It will use the already trained models from the model's directory
 python Run.py
 
 If you want to run in training mode
 python Run.py 0
 
-Output
+#****Output****#
+Predicting for: 2017-08-01  true value: 114.06
 mean:  111.12692  confidence:  1.9513785
 
 Question:
